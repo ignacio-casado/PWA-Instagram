@@ -1,0 +1,116 @@
+
+body {
+    background-color: #474545; /* Color de fondo oscuro */
+    color: #fff; /* Color de texto blanco */
+  }
+ 
+  button{
+    background: black;
+    cursor: pointer;
+    border: none;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    position: relative;
+    border-radius: 12px;
+  }
+  button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        45deg,
+        red, blue, deeppink, blue,
+        red, blue, deeppink, blue
+    );
+    background-size: 800%;
+    border-radius: 10px;
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+}
+
+  @keyframes glowing{
+    0%{
+        background-position: 0, 0;
+    }
+    50%{
+        background-position: 400% 0;
+    }
+    100%{
+        background-position: 0, 0;
+    }
+  }
+ 
+.navbar-brand {
+    display: inline-block; /* Para que el texto se comporte como un bloque */
+    width: 100%; /* Opcional: asegura que el ancho del span sea del 100% */
+    text-align: center; /* Centra el texto horizontalmente */
+    font-size: 24px;
+  }
+  #btn-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000; /* Ajusta según sea necesario para asegurar que esté por encima del contenido */
+    padding: 10px; /* Opcional: agrega un poco de espacio alrededor del contenedor */
+  }
+  
+  .container {
+    margin-bottom: 50px; /* Ajusta según la altura del contenedor de botones */
+  }
+  
+ 
+ .navbar{
+    background-color: #c8c6c6;
+ }
+ /* CSS */
+.navbar {
+  background-image: linear-gradient(to bottom right, #0e2b56, #172a45);
+  color: #fff; /* Color del texto */
+  font-family: 'Roboto', sans-serif; /* Tipografía futurista */
+}
+
+.navbar-brand {
+  font-size: 24px; /* Tamaño de la fuente */
+  font-weight: bold;
+  transition: transform 0.3s; /* Transición suave para el efecto hover */
+}
+
+.navbar-brand:hover {
+  color: #19d4ca; /* Cambiar el color al pasar el cursor */
+  text-shadow: 0 0 10px red, 0 0 10px blue, 0 0 10px deeppink; /* Agregar sombra con colores */
+  transform: scale(1.1); /* Agrandar ligeramente al pasar el cursor */
+}
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+  
+  
+  
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
