@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
   inputCamera.type = "file";
   inputCamera.id = "inputCamera";
   inputCamera.accept = "image/*";
-  inputCamera.capture = "user-environment";
+  //inputCamera.capture = "user-environment";
 
   function convertirImagenAbase64() {
     const canvas = document.createElement("canvas");
