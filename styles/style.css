@@ -120,6 +120,60 @@ body {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  width: 300px; /* Ancho deseado para cada tarjeta */
+  height: 400px; /* Alto deseado para cada tarjeta */
+  margin: 10px; /* Espacio entre las tarjetas */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ccc; /* Añade un borde opcional */
+  border-radius: 8px; /* Añade bordes redondeados */
+}
+
+.card img {
+  width: 100%; /* Tamaño fijo para la imagen */
+  height: 300px; /* Altura fija para la imagen */
+  object-fit: cover; /* Para ajustar la imagen dentro de su contenedor manteniendo las proporciones */
+}
+
+.card-body {
+  padding: 20px;
+  text-align: center;
+  flex: 1; /* Para que el cuerpo de la tarjeta ocupe el espacio restante */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
