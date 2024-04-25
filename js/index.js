@@ -104,8 +104,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
     imagen.src = URL.createObjectURL(inputCamera.files[0]);
   }
+
+  const loader = document.getElementById("loader");
+  // Agregamos esta línea
   btnCapturar.addEventListener("click", () => {
-    inputCamera.click();
+    blueScreen.style.opacity = "0.7";
+    // Simular una carga
+    setTimeout(function () {
+      inputCamera.click();
+      setTimeout(function () {
+        blueScreen.style.opacity = "0";
+        loader.style.display = "none";
+      }, 500);
+    }, 1500);
+    loader.style.display = "inline-block";
   });
 
   inputCamera.addEventListener("change", () => {
