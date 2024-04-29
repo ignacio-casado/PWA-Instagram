@@ -79,16 +79,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
   fetchData();
 
-  // Botón para capturar foto
+  // Manejo del dom
   const imagen = document.querySelector("img#imgCamera");
   const btnCapturar = document.querySelector("button#btn-camara");
+  const loader = document.getElementById("loader");
+  const titulo = document.querySelector("span#titulo-main");
 
   const inputCamera = document.createElement("input");
   inputCamera.type = "file";
   inputCamera.id = "inputCamera";
   inputCamera.accept = "image/*";
-  //inputCamera.capture = "user-environment";
 
+  //funcion para convertir a base 64
   function convertirImagenAbase64() {
     const canvas = document.createElement("canvas");
     const ctx = canvas.getContext("2d");
@@ -104,8 +106,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     imagen.src = URL.createObjectURL(inputCamera.files[0]);
   }
+  //evento cargando
 
-  const loader = document.getElementById("loader");
   // Agregamos esta línea
   btnCapturar.addEventListener("click", () => {
     blueScreen.style.opacity = "0.7";
@@ -119,12 +121,20 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 1500);
     loader.style.display = "inline-block";
   });
-
+  //evento change y convierto a base64
   inputCamera.addEventListener("change", () => {
     if (inputCamera.value !== "") {
       convertirImagenAbase64();
     } else {
       console.log("err");
     }
+  });
+  //lleva el scroll hacia arriba
+
+  titulo.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   });
 });

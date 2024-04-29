@@ -31,35 +31,37 @@ function subirFoto(e) {
     alert("Debe subir una foto para postear");
     return;
   }
-
   // Si pasa ambas validaciones, procede con el envío de la publicación
-  const data = {
-    descripcion: descripcion.value,
-    url: capturedImage.toString(),
-    fecha: new Date(),
-  };
-  const metod = {
-    method: "POST",
-    body: JSON.stringify(data),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  };
-  fetch(url, metod)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      return response.json();
-    })
-    .then((data) => {
-      console.log("Respuesta del servidor:", data);
-      window.location.href = "index.html";
-      // Hacer algo con la respuesta del servidor
-    })
-    .catch((error) => {
-      console.error("Error en la solicitud:", error);
-    });
+  function postImage() {
+    const data = {
+      descripcion: descripcion.value,
+      url: capturedImage.toString(),
+      fecha: new Date(),
+    };
+    const metod = {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+    fetch(url, metod)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log("Respuesta del servidor:", data);
+        window.location.href = "index.html";
+        // Hacer algo con la respuesta del servidor
+      })
+      .catch((error) => {
+        console.error("Error en la solicitud:", error);
+      });
+  }
+  postImage();
 }
 
 function eliminarFotoSacada(e) {

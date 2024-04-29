@@ -1,0 +1,18 @@
+{
+    "short_name": "Nachogram",
+    "name": "Aplicacion Nachogram",
+    "description": "Trabajo parcial materia PWA",
+    "icons": [
+        {
+          "src": "",
+          "type": "image/png",
+          "sizes": "192x192"
+        }
+      ],
+    "orientation": "portrait",
+    "background_color": "#fff",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/",
+    "theme_color": "#fff"
+}

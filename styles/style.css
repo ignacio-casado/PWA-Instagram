@@ -149,6 +149,28 @@ body {
   text-align: center;
   flex: 1; /* Para que el cuerpo de la tarjeta ocupe el espacio restante */
 }
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff; /* Color de fondo de la barra de navegación */
+  z-index: 1000; /* Asegura que la barra esté por encima de otros elementos */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.container-fluid {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.navbar-brand {
+  font-size: 1.5rem; /* Tamaño de la fuente del nombre de la marca */
+  font-weight: bold;
+  color: #333; /* Color del texto */
+}
 
 
 
