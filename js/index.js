@@ -45,24 +45,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Función para crear la tarjeta de imagen
   function createCard(data) {
-    const formattedDate = data.fecha
-      .toString()
-      .split(" ")
-      .slice(0, 4)
-      .join(" ");
+    const formattedDate = formatDate(data.fecha);
+    const formattedTime = formatTime(data.fecha);
     return `
             <div class="col-md-4 mb-4">
                 <div class="card">
                     <img src="${data.url}" class="card-img-top" alt="imagen">
                     <div class="card-body">
                         <h5 class="card-title">${data.descripcion}</h5>
-                        <p class="card-text">${formattedDate}</p>
+                        <p class="card-text">Fecha: ${formattedDate}</p>
+                        <p class="card-text">Hora: ${formattedTime}</p>
                     </div>
                 </div>
             </div>
         `;
   }
+  // Función para formatear la fecha (DD/MM/YYYY)
+  function formatDate(date) {
+    const options = { year: "numeric", month: "2-digit", day: "2-digit" };
+    return date.toLocaleDateString("es-ES", options);
+  }
 
+  // Función para formatear la hora (HH:MM:SS)
+  function formatTime(date) {
+    const options = { hour: "2-digit", minute: "2-digit", second: "2-digit" };
+    return date.toLocaleTimeString("es-ES", options);
+  }
   // Función para crear la tarjeta de "No se han encontrado elementos"
   function noReelsCard() {
     return `
@@ -79,62 +87,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
   fetchData();
 
-  // Manejo del dom
-  const imagen = document.querySelector("img#imgCamera");
+  // Evento click para href y visual
   const btnCapturar = document.querySelector("button#btn-camara");
-  const loader = document.getElementById("loader");
-  const titulo = document.querySelector("span#titulo-main");
-
-  const inputCamera = document.createElement("input");
-  inputCamera.type = "file";
-  inputCamera.id = "inputCamera";
-  inputCamera.accept = "image/*";
-
-  //funcion para convertir a base 64
-  function convertirImagenAbase64() {
-    const canvas = document.createElement("canvas");
-    const ctx = canvas.getContext("2d");
-
-    imagen.onload = function () {
-      canvas.width = imagen.width;
-      canvas.height = imagen.height;
-      ctx.drawImage(imagen, 0, 0, imagen.width, imagen.height);
-      const base64 = canvas.toDataURL("image/webp");
-      localStorage.setItem("foto", base64);
-      window.location.href = "camara.html";
-    };
-
-    imagen.src = URL.createObjectURL(inputCamera.files[0]);
-  }
-  //evento cargando
-
-  // Agregamos esta línea
   btnCapturar.addEventListener("click", () => {
     blueScreen.style.opacity = "0.7";
     // Simular una carga
     setTimeout(function () {
-      inputCamera.click();
       setTimeout(function () {
         blueScreen.style.opacity = "0";
         loader.style.display = "none";
+        window.location.href = "camara.html";
       }, 500);
     }, 1500);
     loader.style.display = "inline-block";
-  });
-  //evento change y convierto a base64
-  inputCamera.addEventListener("change", () => {
-    if (inputCamera.value !== "") {
-      convertirImagenAbase64();
-    } else {
-      console.log("err");
-    }
-  });
-  //lleva el scroll hacia arriba
-
-  titulo.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
   });
 });

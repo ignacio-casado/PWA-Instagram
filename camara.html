@@ -9,18 +9,33 @@
     <title>Nachogram</title>
 </head>
 <body>
+
+ 
     <h1>Imagen Capturada</h1>
 
-   
-<div class="card" style="width: 18rem;">
-    <img id="capturedImage" src="" alt="Imagen Capturada">
-  <div class="card-body">
-    <h5 class="card-title">Descripcion de Foto: </h5>
-    <input type="text" id="descriptionInput" placeholder="Escribe una descripción para tu foto..."><br><br>
-    <a href="#" class="btn btn-primary" id="subir">Subir</a>
-    <a class="btn  btn-danger" id="eliminar">Borrar</a>
+    <div class="card-container">
+      <div class="card custom-card">
+          <input type="file" class="form-control" id="inputFile" multiple accept="camera">
+          <img id="capturedImage" src="" class="card-img-top" alt="Imagen Capturada" style="display: none;">
+          <div class="card-body">
+              <h5 class="card-title">Descripción de Foto:</h5>
+              <input type="text" class="form-control custom-input" id="descriptionInput" placeholder="Escribe una descripción para tu foto...">
+              <br><br>
+              <button href="#" class="btn btn-primary" id="subir">Subir</button>
+              <button class="btn btn-danger" id="eliminar">Borrar</button>
+              <button class="btn btn-dark" id="redirect">Volver</button>
+          </div>
+      </div>
   </div>
-</div>
+
+
+
+
+
+
+
+
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 

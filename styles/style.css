@@ -128,7 +128,7 @@ body {
 
 .card {
   width: 300px; /* Ancho deseado para cada tarjeta */
-  height: 400px; /* Alto deseado para cada tarjeta */
+  height: 450px; /* Alto deseado para cada tarjeta */
   margin: 10px; /* Espacio entre las tarjetas */
   display: flex;
   flex-direction: column;
@@ -171,7 +171,24 @@ body {
   font-weight: bold;
   color: #333; /* Color del texto */
 }
-
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.custom-card {
+  width: 18rem;
+  background-color: #343a40; /* Color de fondo oscuro */
+  color: #ffffff; /* Color de texto blanco */
+}
+.custom-input {
+  background-color: #ffffff; /* Color de fondo del input */
+  color: #212529; /* Color de texto oscuro */
+  border: none;
+  outline: none;
+  padding: 8px;
+}
 
 
 
