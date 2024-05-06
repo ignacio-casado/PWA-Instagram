@@ -48,8 +48,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const formattedDate = formatDate(data.fecha);
     const formattedTime = formatTime(data.fecha);
     return `
-            <div class="col-md-4 mb-4">
-                <div class="card">
+            <div class="col-md-4 mt-5 pd-3">
+                <div class="card col-md-6">
                     <img src="${data.url}" class="card-img-top" alt="imagen">
                     <div class="card-body">
                         <h5 class="card-title">${data.descripcion}</h5>
