@@ -74,8 +74,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // Función para crear la tarjeta de "No se han encontrado elementos"
   function noReelsCard() {
     return `
-            <div class="col-md-4 mb-4">
-                <div class="card">
+            <div class="col-md-2 mt-5">
+                <div class="card mt-3">
                     <img src="./img/NoFound.png" class="card-img-top" alt="imagen">
                     <div class="card-body">
                         <h5 class="card-title">No se han encontrado elementos</h5>
